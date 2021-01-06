@@ -1,6 +1,7 @@
-import {registry} from '@jahia/ui-extender';
+// Used only if jahia-ui-root is the host, experimental
 
-registry.add('callback', 'contentEditorExtensions', {
-    targets: ['jahiaApp-init:20'],
-    callback: () => import('./ContentEditorExtensions.register')
+import('@jahia/app-shell/bootstrap').then(res => {
+    console.log(res);
+    window.jahia = res;
+    res.startAppShell(window.appShell.remotes, window.appShell.targetId);
 });
