@@ -86,7 +86,7 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new ModuleFederationPlugin({
-                name: "contentEditor",
+                name: "contentEditorExtensions",
                 library: { type: "assign", name: "appShell.remotes.contentEditorExtensions" },
                 filename: "remoteEntry.js",
                 exposes: {
